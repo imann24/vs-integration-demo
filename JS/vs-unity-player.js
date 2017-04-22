@@ -41,6 +41,7 @@ function submit(data)
 
 function fetch(key, gameObject, callbackFunction)
 {
+     console.log(key, gameObject, callbackFunction);
      unityFetchCallbacks[key] = new UnityCallback(gameObject, callbackFunction);
      parent.window.postMessage(FETCH_KEY + JOIN_CHAR + key, "*");
 }
