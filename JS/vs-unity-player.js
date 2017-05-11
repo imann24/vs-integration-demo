@@ -66,7 +66,14 @@ function initialize()
 {
      if(typeof(SendMessage) === typeof(Function))
      {
-          alert("FOO");
+          try
+          {
+               SendMessage(MESSAGE_RECEIVER_GAME_OBJECT, INIT_FUNC);
+          }
+          catch(exception)
+          {
+               window.setTimeout(initialize, 100);
+          }
      }
      else
      {
