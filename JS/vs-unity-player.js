@@ -66,7 +66,7 @@ function initialize()
 {
      if(typeof(SendMessage) === typeof(Function))
      {
-          SendMessage(MESSAGE_RECEIVER_GAME_OBJECT, INIT_FUNC);
+          alert("FOO");
      }
      else
      {
