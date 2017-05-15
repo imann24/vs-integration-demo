@@ -49,10 +49,16 @@ function handleFetchEventCallback(eventData)
      var message = eventData.split(JOIN_CHAR);
      var key = message[1];
      var value = message[2];
-     alert(key);
      var callback = unityFetchCallbacks[key];
-     // Unity defined function:
-     SendMessage(callback.gameObject, callback.callbackFunction, value);
+     if(callback == null)
+     {
+          alert("Null callback on key: " + key);
+     }
+     else
+     {
+          // Unity defined function:
+          SendMessage(callback.gameObject, callback.callbackFunction, value);
+     }
 }
 
 // Sends message to Volunteer Science via "submit" call
