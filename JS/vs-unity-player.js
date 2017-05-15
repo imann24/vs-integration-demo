@@ -49,6 +49,7 @@ function handleFetchEventCallback(eventData)
      var message = eventData.split(JOIN_CHAR);
      var key = message[1];
      var value = message[2];
+     console.log(key);
      var callback = unityFetchCallbacks[key];
      // Unity defined function:
      SendMessage(callback.gameObject, callback.callbackFunction, value);
