@@ -53,6 +53,7 @@ function handleFetchEventCallback(eventData)
      if(key == "vs_player_count")
      {
           alert(eventData);
+          alert(value);
      }
      // Unity defined function:
      SendMessage(callback.gameObject, callback.callbackFunction, value);
