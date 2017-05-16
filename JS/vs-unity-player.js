@@ -45,20 +45,17 @@ function receiveEvent(event)
 // Sends requested data back to Unity fomr a fetch call
 function handleFetchEventCallback(eventData)
 {
+     if(key == "vs_player_count")
+     {
+          alert(eventData);
+     }
      // Should return: ["vs_fetch", key, value]
      var message = eventData.split(JOIN_CHAR);
      var key = message[1];
      var value = message[2];
      var callback = unityFetchCallbacks[key];
-     if(callback == null)
-     {
-          alert("Null callback on key: " + key);
-     }
-     else
-     {
-          // Unity defined function:
-          SendMessage(callback.gameObject, callback.callbackFunction, value);
-     }
+     // Unity defined function:
+     SendMessage(callback.gameObject, callback.callbackFunction, value);
 }
 
 // Sends message to Volunteer Science via "submit" call
@@ -70,7 +67,6 @@ function submit(data)
 // Retrieves a variable corresponding to a particular key from Volunteer Science
 function fetch(key, gameObject, callbackFunction)
 {
-     alert("Adding callback for " + key);
      unityFetchCallbacks[key.split(JOIN_CHAR)[0]] = new UnityCallback(gameObject, callbackFunction);
      parent.window.postMessage(FETCH_KEY + JOIN_CHAR + key, "*");
 }
