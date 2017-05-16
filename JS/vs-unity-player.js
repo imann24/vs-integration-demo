@@ -45,15 +45,15 @@ function receiveEvent(event)
 // Sends requested data back to Unity fomr a fetch call
 function handleFetchEventCallback(eventData)
 {
-     if(key == "vs_player_count")
-     {
-          alert(eventData);
-     }
      // Should return: ["vs_fetch", key, value]
      var message = eventData.split(JOIN_CHAR);
      var key = message[1];
      var value = message[2];
      var callback = unityFetchCallbacks[key];
+     if(key == "vs_player_count")
+     {
+          alert(eventData);
+     }
      // Unity defined function:
      SendMessage(callback.gameObject, callback.callbackFunction, value);
 }
