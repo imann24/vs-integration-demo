@@ -104,7 +104,7 @@ function setConsumables(consumablesClass, consumablesSet, consumableChoice)
 {
      parent.window.postMessage(
           formatArguments([SET_CONSUMABLES_KEY,
-               consumablesClass, consumablesSet, consumableChoice]));
+               consumablesClass, consumablesSet, consumableChoice]), "*");
 }
 
 // Calls Initialize() within Unity upon receiving a message from Volunteer Science
