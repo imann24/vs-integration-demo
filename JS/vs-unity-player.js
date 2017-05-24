@@ -74,7 +74,7 @@ function fetch(key, gameObject, callbackFunction)
      {
           args = "";
      }
-     if(key.includes("vs_consumables")
+     if(key.includes("vs_consumables"))
      {
           alert(key);
           alert(FETCH_KEY + JOIN_CHAR + callbackKey + JOIN_CHAR + args);
