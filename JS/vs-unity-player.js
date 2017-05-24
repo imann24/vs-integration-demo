@@ -74,6 +74,11 @@ function fetch(key, gameObject, callbackFunction)
      {
           args = "";
      }
+     if(key.includes("vs_consumables")
+     {
+          alert(key);
+          alert(FETCH_KEY + JOIN_CHAR + callbackKey + JOIN_CHAR + args);
+     }
      unityFetchCallbacks[callbackKey] = new UnityCallback(gameObject, callbackFunction);
      parent.window.postMessage(FETCH_KEY + JOIN_CHAR + callbackKey + JOIN_CHAR + args, "*");
 }
